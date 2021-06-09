@@ -56,6 +56,7 @@ const controls = new OrbitControls( camera, renderer.domElement );
 //controls.update() must be called after any manual changes to the camera's transform
 //camera.position.set( 0, 20, 100 );
 controls.update();
+controls.autoRotate=true;
 
 const animate = function () {
     requestAnimationFrame(animate);
@@ -64,7 +65,8 @@ const animate = function () {
     //cube.rotation.y += 0.01;
 
     renderer.render(scene, camera);
-
+    
+    controls.update();
 
 };
 
